@@ -8,7 +8,7 @@ import img1 from '../images/img1.JPG'
 import {connect} from 'react-redux'
 import SearchInput from 'react-search-input' 
 
-class House extends React.Component{
+class LandandPlots extends React.Component{
     render(){
         return(
             <div>
@@ -42,27 +42,38 @@ class House extends React.Component{
                 <img src={img1} alt=""/>
                 <p id="text1">Fresh recommendations</p>
                 <div>
-                    <div className="mycontainer">
-                        {
-                            this.props.items[0].map((v,i)=>{
-                                if(v.Category==="House")
-                                return(
-                                    <div className="subcon">
-                                        <div className="card" style={{width: '50rem'}}>
-                        
-                                            <div key={i}>{<img id='images'  src={v.addr}/>}</div>
-                                            <div className="card-body">
-                                                <h5 className="card-title">{v.Category}</h5>
-                                                <h6 className="card-title">Brand: {v.brand}</h6>
-                                                <p className="card-text">Codition: {v.conditon}</p>
-                                                <p className="card-text">Price: {v.price}</p>
-                                                <p className="card-text">Location: {v.location}</p>
+                    {
+                        this.props.items[0].length>0 &&
+
+                        <div className="mycontainer">
+                            {
+
+                                this.props.items[0].map((v,i)=>{
+                                    if(v.Category==="Land & Plots")
+                                    return(
+                                        <div className="subcon">
+                                            <div className="card" style={{width: '50rem'}}>
+                            
+                                                <div key={i}>{<img id='images'  src={v.addr}/>}</div>
+                                                <div className="card-body">
+                                                    <h5 className="card-title">{v.Category}</h5>
+                                                    <h6 className="card-title">Brand: {v.brand}</h6>
+                                                    <p className="card-text">Codition: {v.conditon}</p>
+                                                    <p className="card-text">Price: {v.price}</p>
+                                                    <p className="card-text">Location: {v.location}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                            )})
-                        }
-                    
+                                )
+                                
+                            })
+                            }
+                        
+                        </div>
+                    }
+                    :
+                    <div>
+                        <h4 style={{textAlign:'center'}}>Item Not Found</h4>
                     </div>
                 </div>                      
             </div>        
@@ -73,4 +84,4 @@ const mapStateToProps=(state)=>({
     items:[state.Items],
      
 })
-export default connect (mapStateToProps,null)(House);
+export default connect (mapStateToProps,null)(LandandPlots);

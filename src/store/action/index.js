@@ -31,6 +31,7 @@ const facebook_login=()=>{
             firebase.database().ref('/').child('users/' + user.uid).set(create_user)
             .then(()=>{
                 alert("Successful Login")
+                window.close('./login')
                 // useHistory.push()
             })
             // dispatch({type: "SETUSER", payload:create_user})
@@ -97,6 +98,10 @@ const get_data=()=>{
     //     payload:items
     // })
 }}
+
+const search_item=()=>{
+    
+}
 export {
     facebook_login,
     set_data,
@@ -105,3 +110,4 @@ export {
     get_data,
     // send_data_firebase,
 }
+

@@ -1,58 +1,76 @@
-import React from 'react';
-import {connect} from 'react-redux'
-// import {BrowserRouter as Router,Route} from 'react-router-dom'
-import Header from "../component/header"
-// import Login from "../component/login"
+import React, {Component} from 'react'
+import Logo from '../images/olxlogo.jpg'
+import {FaSearch} from 'react-icons/fa';
+import {IoIosArrowDown } from "react-icons/io";
 import Navbar from '../component/navbar'
-import Mycomp from '../component/mycomp'
 import Button from '../component/button'
-// import img1 from '../images/img1.JPG'
-// import car1 from '../images/carimage.jpg'
+import img1 from '../images/img1.JPG'
+import {connect} from 'react-redux'
+import SearchInput from 'react-search-input' 
 
-class Cars extends React.Component{
+class Car extends React.Component{
     render(){
         return(
-                
-        <div>
-            {/* <h3>{this.state.Pagename}</h3> */}
-            <div id="header">
+            <div>
+                <div id="header">
                     <div>
-                        <Header/>
+                        <img src={Logo} id="logo"/>
                     </div>
-                    <Button/>
+                    <div className="div2" style={{display:'flex'}}>
+                        <span>
+                            <FaSearch id="FaSearch"/>
+                        </span>
+                        <span>
+                            <input id="locationsrch" placeholder="Pakistan"></input>
+                        </span>
+                        <span id="">
+                            <IoIosArrowDown id="dwnbtn"/>
+                        </span>
+                        <div style={{display:'flex'}}>
+                            <div className="searchproduct">
+                                <SearchInput id="searchproduct" className="search-input" onChange={this.searchUpdated} />
+                            </div>
+                            <div>      
+                                <FaSearch id="FaSearchtwo"/>
+                            </div>
+                        </div>
+                        <Button/>
+                    </div>
+                
                 </div>
                 <Navbar/>
-            {/* <img src={img1} alt=""/>
-            <Mycomp add={car1} name="Toyota Car" price=" Rs 1,700,000" city="Karachi" day="today"/ > */}
-
-
-
-
-
-                <div style={{display:'flex'}}>
-                    {
-                        this.props.Items.map((v,i)=>{
-                            if(v.item_name==="car")
-                            return(
-                                <div className="card" style={{width: '50rem'}}>
-                 
-                                    <div key={i}>{<img id='images'  src={v.img}/>}</div>
-                                    <div className="card-body">
-                                        <h5 className="card-title">RS {v.price}</h5>
-                                        <p className="card-text">{v.item_name}</p>
+                <img src={img1} alt=""/>
+                <p id="text1">Fresh recommendations</p>
+                <div>
+                    <div className="mycontainer">
+                        {
+                            this.props.items[0].map((v,i)=>{
+                                if(v.Category==="Car")
+                                return(
+                                    <div className="subcon">
+                                        <div className="card" style={{width: '50rem'}}>
+                        
+                                            <div key={i}>{<img id='images'  src={v.addr}/>}</div>
+                                            <div className="card-body">
+                                                <h5 className="card-title">{v.Category}</h5>
+                                                <h6 className="card-title">Brand: {v.brand}</h6>
+                                                <p className="card-text">Codition: {v.conditon}</p>
+                                                <p className="card-text">Price: {v.price}</p>
+                                                <p className="card-text">Location: {v.location}</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                        )})
-                    }
-                
-                </div>
-        </div>
-
+                            )})
+                        }
+                    
+                    </div>
+                </div>                      
+            </div>        
         )
     }
 }
-const mapStateToProps=(state)=>{
-    return(state)
-
-}
-export default connect(mapStateToProps,null)(Cars);
+const mapStateToProps=(state)=>({
+    items:[state.Items],
+     
+})
+export default connect (mapStateToProps,null)(Car);

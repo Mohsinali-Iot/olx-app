@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {Dropdown} from 'react-bootstrap'
 
 
+
 class navbar extends React.Component{
     render(){
         return(
@@ -27,11 +28,11 @@ class navbar extends React.Component{
                                     <div style={{display:"flex"}}>
                                         <div>
                                             <Dropdown.Item href="#/action-1"><b>Vehicles</b></Dropdown.Item>
-                                            <Dropdown.Item href="#/action-3">Car</Dropdown.Item>
-                                            <Dropdown.Item href="#/action-3">Bike</Dropdown.Item>
-                                            <Dropdown.Item href="#/action-3">Boat</Dropdown.Item>
-                                            <Dropdown.Item href="#/action-3">Tractors and Trailers</Dropdown.Item>
-                                            <Dropdown.Item href="#/action-3">Buses and Van</Dropdown.Item>
+                                            <Link className="nav-link" to="/cars">Cars</Link>
+                                            <Link className="nav-link" to="/Bike">Bike</Link>
+                                            <Link className="nav-link" to="/Bike">Boat</Link>
+                                            <Link className="nav-link" to="/Tractors_and_Trailers">Tractors and Trailers</Link>
+                                            <Link className="nav-link" to="/Buses_and_Van">Buses and Van</Link>
                                         </div>
                                         <div>
                                             <Dropdown.Item href="#/action-1"><b>Animal</b></Dropdown.Item>
@@ -98,7 +99,7 @@ class navbar extends React.Component{
                                             <Dropdown.Item href="#/action-3">Kitchen Appliances</Dropdown.Item>
                                             <Dropdown.Item href="#/action-3">Generators, UPS & Power Solutions</Dropdown.Item>
                                             <Dropdown.Item href="#/action-3">TV - Video - Audio</Dropdown.Item>
-                                            <Dropdown.Item href="#/action-3">Computers & Accessories</Dropdown.Item>
+                                            <Link to='/laptops'>Computers & Accessories</Link>
                                         </div>
                                         <div>
                                             <Dropdown.Item href="#/action-1"><b>Furniture and Home Decor</b></Dropdown.Item>
@@ -180,13 +181,14 @@ class navbar extends React.Component{
                     
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">TV-Videos-Audios</a>
+                    <Link className="nav-link" to="/TV-Videos-Audios">TV-Videos-Audios <span className="sr-only">(current)</span></Link>
+
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Tablets</a>
+                        <Link className="nav-link" to="/Tablets">Tablet <span className="sr-only">(current)</span></Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Land & Plots</a>
+                    <Link className="nav-link" to="/landplots">Land & Plots <span className="sr-only">(current)</span></Link>
                     </li>
                         {/* <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

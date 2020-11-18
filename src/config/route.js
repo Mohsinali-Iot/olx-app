@@ -10,11 +10,12 @@ import Car from "../container/cars"
 import Sell from "../container/sell"
 import Form from "../container/form"
 import House from "../container/house"
-// import Motorcycle from "../container/motorcycle"
-// import Houses from "../container/houses"
-// import TVAudioVideo from "../container/tvaudiovideo"
-// import Tablets from "../container/tablets"
-// import Landandplots from "../container/landandplots"
+import Laptops from '../container/laptops'
+import Tablets from '../container/Tablets'
+import Motorcycle from "../container/bike"
+import TV_Videos_Audios from "../container/TV-Videos-Audios"
+import LandandPlots from '../container/landplots'
+import Card from '../component/card'
 
 
 class AppRouter extends React.Component{
@@ -29,12 +30,12 @@ class AppRouter extends React.Component{
                 <Route path='/house' component={House}/>
                 <Route path='/sell' component={Sell}/>
                 <Route path='/form' component={Form}/>
+                <Route path='/laptops' component={Laptops}/>
+                <Route path='/Tablets' component={Tablets}/>
+                <Route path='/TV-Videos-Audios' component={TV_Videos_Audios}/>
+                <Route path='/landplots' component={LandandPlots}/>
+                <Route path='/card' component={Card}/>
                 
-                {/* <Route path='/motorcycle' component={Motorcycle}/>
-                <Route path='/houses' component={Houses}/>
-                <Route path='/tvaudiovideo' component={TVAudioVideo}/>
-                <Route path='/tablets' component={Tablets}/>
-                <Route path='/landandplots' component={Landandplots}/> */}
 
             </Router>
         )

@@ -2,6 +2,8 @@
   background-color:whitesmoke;
   height: 50px;
   display: flex;
+  margin: 5px;
+  
 }
 #logo{
   width: 50px;
@@ -81,7 +83,7 @@
 .card{
   margin-left: 20px;
   max-width: 300px;
-  height: 400px;
+  height: 450px;
 }
 #city{
   font-size: small;
@@ -91,8 +93,8 @@
   margin-left: 125px;
 }
 #images{
-  width: 280px;
-  height: 200px;
+  width: 300px;
+  height: 240px;
 }
 #cityday{
   padding: 65px 20px 10px 0px;
@@ -264,7 +266,44 @@
 
 .f1,.f2,.f3,.f4,.f5{
   border: 1px solid black;
-  margin: 0px 200px;
-  padding: 50px 20px;
+  /* margin: 0px 200px; */
+  padding: 50px 30px;
 }
 
+
+
+
+#IncludeSomeDetails{
+  margin: 20px 0px;
+}
+
+.radiopad{
+  margin-left: 10px;
+}
+
+.mycontainer{
+  display: flex;
+  flex-wrap: wrap;
+}
+.subcon{
+  margin:10px 5px;
+}
+
+
+.d-block ,.w-100{
+  /* width: 200px;
+  height: 300px !important; */
+}
+.w-100{
+  width: 200px;
+  height: 300px !important;
+
+}
+
+
+.myimages{
+  max-width: 100%;
+  min-width: 20%;
+  max-height: auto;
+  min-height: auto;
+}

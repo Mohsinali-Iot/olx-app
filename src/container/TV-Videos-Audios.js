@@ -8,7 +8,7 @@ import img1 from '../images/img1.JPG'
 import {connect} from 'react-redux'
 import SearchInput from 'react-search-input' 
 
-class House extends React.Component{
+class TV_Videos_Audios extends React.Component{
     render(){
         return(
             <div>
@@ -45,7 +45,7 @@ class House extends React.Component{
                     <div className="mycontainer">
                         {
                             this.props.items[0].map((v,i)=>{
-                                if(v.Category==="House")
+                                if(v.Category==="TV_Videos_Audios")
                                 return(
                                     <div className="subcon">
                                         <div className="card" style={{width: '50rem'}}>
@@ -60,7 +60,9 @@ class House extends React.Component{
                                             </div>
                                         </div>
                                     </div>
-                            )})
+                            )
+                            
+                        })
                         }
                     
                     </div>
@@ -73,4 +75,4 @@ const mapStateToProps=(state)=>({
     items:[state.Items],
      
 })
-export default connect (mapStateToProps,null)(House);
+export default connect (mapStateToProps,null)(TV_Videos_Audios);

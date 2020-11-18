@@ -6,9 +6,9 @@ import Navbar from '../component/navbar'
 import Button from '../component/button'
 import img1 from '../images/img1.JPG'
 import {connect} from 'react-redux'
-import SearchInput from 'react-search-input' 
+import SearchInput, {createFilter} from 'react-search-input' 
 
-class House extends React.Component{
+class Tablets extends React.Component{
     render(){
         return(
             <div>
@@ -45,7 +45,7 @@ class House extends React.Component{
                     <div className="mycontainer">
                         {
                             this.props.items[0].map((v,i)=>{
-                                if(v.Category==="House")
+                                if(v.Category==="Tablet")
                                 return(
                                     <div className="subcon">
                                         <div className="card" style={{width: '50rem'}}>
@@ -73,4 +73,4 @@ const mapStateToProps=(state)=>({
     items:[state.Items],
      
 })
-export default connect (mapStateToProps,null)(House);
+export default connect (mapStateToProps,null)(Tablets);

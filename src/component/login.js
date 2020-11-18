@@ -1,6 +1,9 @@
 import React from 'react'
 import {Link} from "react-router-dom"
 import {connect} from 'react-redux'
+import slider1 from '../images/slider1.PNG'
+import slider2 from '../images/slider2.PNG'
+import slider3 from '../images/slider3.PNG'
 import {facebook_login} from '../store/action'
 class Login extends React.Component{
     // faceBookauth=()=>{
@@ -13,13 +16,13 @@ class Login extends React.Component{
                     <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
                         <div className="carousel-inner">
                             <div className="carousel-item active">
-                                <img className="d-block w-100" src="..." alt="First slide" />
+                                <img className="d-block w-100" src={slider1} alt="First slide" />
                             </div>
                             <div className="carousel-item">
-                                <img className="d-block w-100" src="..." alt="Second slide" />
+                                <img className="d-block w-100" src={slider2} alt="Second slide" />
                             </div>
                             <div className="carousel-item">
-                                <img className="d-block w-100" src="..." alt="Third slide" />
+                                <img className="d-block w-100" src={slider3} alt="Third slide" />
                             </div>
                         </div>
                         <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -33,7 +36,7 @@ class Login extends React.Component{
                     </div>
                 </div>
                 <h4 className="loginwith"><button onClick={()=>this.props.facebook_login()} class="loginbutton">Login With FaceBook</button></h4>
-                <h4 className="loginwith"><button class="loginbutton">Login With Google</button></h4>
+                {/* <h4 className="loginwith"><button class="loginbutton">Login With Google</button></h4> */}
                 <Link to="/">Go to Home</Link>
             </div>
         )
