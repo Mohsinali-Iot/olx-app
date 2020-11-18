@@ -9,6 +9,9 @@ class Login extends React.Component{
     // faceBookauth=()=>{
     //     console.log("facebook")
     // }
+    go_to_home(){
+        window.close('/login')
+    }
     render(){
         return(
             <div class="logindiv">
@@ -37,7 +40,7 @@ class Login extends React.Component{
                 </div>
                 <h4 className="loginwith"><button onClick={()=>this.props.facebook_login()} class="loginbutton">Login With FaceBook</button></h4>
                 {/* <h4 className="loginwith"><button class="loginbutton">Login With Google</button></h4> */}
-                <Link to="/">Go to Home</Link>
+                <button style={{backgroundColor:'blue',color:'white'}} onClick={this.go_to_home}>Go to Home</button>
             </div>
         )
     }

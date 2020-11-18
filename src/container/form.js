@@ -54,9 +54,10 @@ class form extends React.Component{
     }
     send_data_firebase=()=>{
         var key=firebase.database().ref('images/').push().key
-        firebase.database().ref('/').child('items/' + key).set(this.state)
-        window.close('./form')
-        console.log("from state:",this.state)
+        firebase.database().ref('/').child('items/' + key).set(this.state).then(()=>{
+            window.close('./form')
+            console.log("from state:",this.state)
+        })
         
 
     }
